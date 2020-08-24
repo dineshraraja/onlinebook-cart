@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4"  *ngFor = "let item of results">
+    <div class="card"> 
+    <div>         
+      <img class="rounded mx-auto d-block img-responsive mt-3" src="{{item.volumeInfo.imageLinks.thumbnail}}" alt="{{item.volumeInfo.title}}">
+      </div>
+      <div class="card-body">
+        <h6 class="card-title font-weight-bold">{{item.volumeInfo.title}}</h6>
+        <div class="row" *ngIf="item.saleInfo.retailPrice">
+            <div class="col-md-12">
+              <p> <small> Rs {{item.saleInfo.retailPrice.amount}} </small> </p>
+            </div>
+          </div>
+        <button *ngIf="item.saleInfo.retailPrice" class="btn btn-sm btn-primary" (click)="addtocart(item)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
