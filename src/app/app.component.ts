@@ -59,7 +59,7 @@ import { AuthenticationService } from './service';
       <li class="nav-item">
         <a class="nav-link" routerLink = '/cart'><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="user">
         <a class="nav-link" (click)="logout()">logout</a>
       </li>
     </ul>
@@ -82,6 +82,7 @@ export class AppComponent implements OnInit {
   }
 
   logout(){
+    this.user = '';
     this.authenticationService.logout();
   }
 

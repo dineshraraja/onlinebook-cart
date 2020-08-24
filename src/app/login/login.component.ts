@@ -42,7 +42,7 @@ loginForm: FormGroup;
         }
 
         this.loading = true;
-        localStorage.getItem('currentUser') != null ? this.user = localStorage.getItem('currentUser') : (this.authenticationService.login(this.f.username.value),this.router.navigate([this.returnUrl]));
+        localStorage.getItem('currentUser') != null ? this.user = localStorage.getItem('currentUser') : (this.authenticationService.login(this.f.username.value),this.router.navigate([this.returnUrl]).then(() => { window.location.reload();}));
     }
 
 }
