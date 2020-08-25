@@ -13,7 +13,7 @@ import { AuthenticationService } from './service';
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" routerLink = '/listbook/html'>Html</a>
       </li>
       <li class="nav-item">
