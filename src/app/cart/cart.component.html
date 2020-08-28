@@ -2,11 +2,11 @@
   <ul>
     <li *ngFor="let item of cartItems">
       <img class="card-img-top" src="{{item.volumeInfo.imageLinks.thumbnail}}" alt="{{item.volumeInfo.title}}">
-      {{item.volumeInfo.title}} 
+      {{item.volumeInfo.title}}
       <span>{{item.saleInfo.retailPrice.amount  | currency:'INR'}}</span>
       <button type="button" class="close" aria-label="Remove Item" (click)="removeItemFromCart(item.id)">
         <span aria-hidden="true">&times;</span>
-      </button>     
+      </button>    
     </li>
   </ul>
   <div class="cart-total">

@@ -16,8 +16,8 @@ export class ShoppingCartService {
   }
 
   getCart() {
-    let total = [];
-    total = this.cartItems;
+    console.log(this.cartItems);
+    let total = this.cartItems;
     return total;
   }
 

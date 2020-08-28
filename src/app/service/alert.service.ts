@@ -9,13 +9,9 @@ export class AlertService {
 
     constructor(private router: Router) {
         router.events.subscribe(event => {
-            if (event instanceof NavigationStart) {
-                if (this.keepAfterNavigationChange) {
-                    this.keepAfterNavigationChange = false;
-                } else {
-                    this.subject.next();
-                }
-            }
+            event instanceof NavigationStart ?
+                (this.keepAfterNavigationChange ? this.keepAfterNavigationChange = false : this.subject.next())
+                : '';
         });
     }
 
